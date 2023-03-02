@@ -1,26 +1,13 @@
-﻿
-using Newtonsoft.Json;
-using RabbitMQ.Client;
+﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using System;
+using StatisConfig;
 using System.Text;
-using System.Text.Json.Serialization;
-using System.Text.Unicode;
 
 public class Program
 {
 
-
-    public static class Config
-    {
-        public static string RABBIT_MQ_URI = "amqp://guest:guest@localhost:5672";
-        public static string QUEUE_NAME = "demo-queue";
-    }
-
     public static void Main(string[] args)
     {
-
-
 
         ConnectionFactory factory = new ConnectionFactory { Uri = new Uri(Config.RABBIT_MQ_URI) };
         using IConnection connection = factory.CreateConnection();
@@ -41,10 +28,8 @@ public class Program
             Console.WriteLine(message);
         };
 
-        channel.BasicConsume(Config.QUEUE_NAME,true,consumer);
+        channel.BasicConsume(Config.QUEUE_NAME, true, consumer);
 
         Console.ReadLine();
-
-
     }
 }
