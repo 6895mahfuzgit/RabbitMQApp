@@ -14,6 +14,7 @@ public class Program
         using IConnection connection = factory.CreateConnection();
         using IModel channel = connection.CreateModel();
 
-        QueueConsumer.Consume(channel);
+        //QueueConsumer.Consume(channel);
+        DirectExchangeConsumer.Consume(channel);
     }
 }
