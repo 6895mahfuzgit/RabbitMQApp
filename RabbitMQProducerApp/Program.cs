@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using RabbitMQ.Client;
+using RabbitMQProducerApp;
 using StatisConfig;
 using System.Text;
 
@@ -11,16 +12,7 @@ public class Program
         using IConnection connection = factory.CreateConnection();
         using IModel channel = connection.CreateModel();
 
-        channel.QueueDeclare(Config.QUEUE_NAME,
-            durable: true,
-            exclusive: false,
-            autoDelete: false,
-            arguments: null
-            );
+        QueueProducer.Publish(channel);
 
-        var message = new { Name = "TestName", Message = "Test Message" };
-        byte[]? body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
-
-        channel.BasicPublish("", Config.QUEUE_NAME, null, body);
     }
 }

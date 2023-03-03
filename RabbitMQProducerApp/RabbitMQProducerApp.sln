@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQProducerApp", "Rabb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQConsumerApp", "..\RabbitMQConsumerApp\RabbitMQConsumerApp.csproj", "{CCB3B60C-9DAC-4A89-8578-2C64AA938547}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatisConfig", "..\StatisConfig\StatisConfig.csproj", "{109D1AB0-1F80-4B92-AF4A-A06EF8C70925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatisConfig", "..\StatisConfig\StatisConfig.csproj", "{109D1AB0-1F80-4B92-AF4A-A06EF8C70925}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
