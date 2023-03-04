@@ -12,8 +12,9 @@ public class Program
         using IConnection connection = factory.CreateConnection();
         using IModel channel = connection.CreateModel();
 
-       // QueueProducer.Publish(channel);
-        DirectExchangePublisher.Publish(channel);
+        // QueueProducer.Publish(channel);
+        // DirectExchangePublisher.Publish(channel);
+        TopicExchangePublisher.Publish(channel);
 
     }
 }

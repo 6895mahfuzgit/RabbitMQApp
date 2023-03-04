@@ -15,6 +15,7 @@ public class Program
         using IModel channel = connection.CreateModel();
 
         //QueueConsumer.Consume(channel);
-        DirectExchangeConsumer.Consume(channel);
+        //DirectExchangeConsumer.Consume(channel);
+        TopicExchangeConsumer.Consume(channel);
     }
 }
